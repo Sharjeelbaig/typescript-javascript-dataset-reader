@@ -20,7 +20,7 @@ readDataset(path)
 
 # License ©
 
-MIT
+[MIT](https://raw.githubusercontent.com/Sharjeelbaig/typescript-javascript-dataset-reader/main/LICENSE)
 
 # Author 👩‍💻
 
