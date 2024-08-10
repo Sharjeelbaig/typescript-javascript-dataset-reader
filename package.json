@@ -1,8 +1,9 @@
 {
   "name": "dataset-reader",
-  "version": "1.2.0",
-  "description": "",
+  "version": "1.2.3",
+  "description": "This module reads csv file",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,7 @@
     "dataset",
     "csv"
   ],
-  "author": "",
+  "author": "Sharjeel baig",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.2.0"
