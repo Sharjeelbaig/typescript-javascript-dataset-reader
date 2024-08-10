@@ -12,5 +12,11 @@
     "csv"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.2.0"
+  },
+  "dependencies": {
+    "typescript": "^5.5.4"
+  }
 }
