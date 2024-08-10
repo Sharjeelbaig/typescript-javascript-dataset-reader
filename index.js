@@ -41,23 +41,26 @@ var readDataset = function (path) { return __awaiter(_this, void 0, void 0, func
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                _b.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, fs.readFile(path, "utf-8")];
+                console.log("Reading dataset from", path);
+                _b.label = 1;
             case 1:
+                _b.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, fs.readFile(path, "utf-8")];
+            case 2:
                 csvString = _b.sent();
                 _a = csvString.split("\n"), headerLine = _a[0], lines = _a.slice(1);
                 headers_1 = headerLine.split(",");
                 return [2 /*return*/, lines.map(function (line) {
-                        var values = line.split(",");
+                        var values = line.split('","').map(function (value) { return value.replace(/"/g, ""); });
                         return headers_1.reduce(function (obj, header, index) {
                             obj[header.trim()] = values[index].trim();
                             return obj;
                         }, {});
                     })];
-            case 2:
+            case 3:
                 error_1 = _b.sent();
                 throw new Error("Error reading dataset: ".concat(error_1.message));
-            case 3: return [2 /*return*/];
+            case 4: return [2 /*return*/];
         }
     });
 }); };
