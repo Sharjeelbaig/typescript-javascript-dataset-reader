@@ -1,5 +1,5 @@
-const fs = require("fs").promises;
-
+// const fs = require("fs").promises;
+import { promises as fs } from "fs";
 interface Dataset {
   [key: string]: string;
 }
@@ -11,7 +11,7 @@ const readDataset = async (path: string): Promise<Dataset[]> => {
     const [headerLine, ...lines] = csvString.split("\n");
     const headers = headerLine.split(",");
 
-    return lines.map((line) => {
+    return lines.map((line: string) => {
       const values = line.split('","').map((value) => value.replace(/"/g, ""));
       return headers.reduce((obj, header, index) => {
         obj[header.trim()] = values[index].trim();
@@ -23,4 +23,5 @@ const readDataset = async (path: string): Promise<Dataset[]> => {
   }
 };
 
-module.exports = readDataset;
+// module.exports = readDataset;
+export default readDataset;
